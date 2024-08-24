@@ -19,7 +19,7 @@ public class Materals_db {
     private int id;
 
     @Column(name = "limit_strength")
-    private int limit_strength;
+    private int limitStrength13;
 
     @Column(name = "materials")
     private String materials;

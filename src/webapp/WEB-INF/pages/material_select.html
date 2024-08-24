@@ -11,7 +11,7 @@
 
     <div th:each = "material: ${materials}" >
         <input type="checkbox" checked th:name="${material.getId()}" th:value="${material.getId()}"/>
-        <a th:text = "${material.getMaterials()}" > </a> ( <a th:text =  "${material.getLimit_strength()}" > </a> MPa)
+        <a th:text = "${material.getMaterials()}" > </a> ( <a th:text =  "${material.getLimitStrength13()}" > </a> MPa)
     </div>
     <p>
         <button type="submit">Choose</button>
