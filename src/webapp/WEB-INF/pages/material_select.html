@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Material_select</title>
+</head>
+<body>
+<h2> Material </h2>
+
+<form action = "/moment_page_1" method = "get">
+
+    <div th:each = "material: ${materials}" >
+        <input type="checkbox" checked th:name="${material.getId()}" th:value="${material.getId()}"/>
+        <a th:text = "${material.getMaterials()}" > </a> ( <a th:text =  "${material.getLimit_strength()}" > </a> MPa)
+    </div>
+    <p>
+        <button type="submit">Choose</button>
+    </p>
+</form>
+
+</body>
+</html>

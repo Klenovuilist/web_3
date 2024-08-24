@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns: th ="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Material</title>
+</head>
+<body>
+
+<p th:text="wdqqwdqwd"></p>
+
+<form method="POST" action="/materials_create" th:object = "${newMaterial}" >
+
+    <label for="material">Material  </label>
+    <input th:type="text" th:field = "*{materials}" id="material"  />
+
+    <label for="limit">Limit  </label>
+    <input th:type="text" th:field = "*{limit_strength}" id="limit"  />
+
+    <div th:each = "thread: ${threads}" >
+
+        <p>
+        <p th:text="${thread.getThread()}"></p>
+            <input type="text" th:name="${thread.getThread()}" th:placeholder="0" size="6" />
+        </p>
+
+    </div>
+
+    <p>
+        <input type="submit" value="Create" />
+    </p>
+
+</form>
+</body>
+</html>

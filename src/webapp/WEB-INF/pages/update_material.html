@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+</head>
+<body>
+<p th:text="Material"></p>
+
+<form method="POST" th:action="@{/update/{id}(id=${material.getId()})}" th:object = "${material}" >
+
+    <label for="material">Material  </label>
+    <input th:type="text" th:field = "*{materials}" id="material"  />
+
+    <label for="limit">Limit  </label>
+    <input th:type="text" th:field = "*{limit_strength}" id="limit"  />
+
+
+
+    <div th:each = "moment: ${moments}" >
+        <p th:text="${moment.getThread().getThread()}"></p>
+        <input type="text" th:name="${moment.getThread().getThread()}" th:value="${moment.getMoments_nm()}"  size="6" />
+        </p>
+
+    </div>
+
+    <p>
+        <input type="submit" value="Apply" />
+    </p>
+
+</form>
+</body>
+</html>

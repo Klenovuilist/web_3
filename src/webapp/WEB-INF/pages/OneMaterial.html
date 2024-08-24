@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+    <h3>  <a th:text="${material.getMaterials()}" > </a>   </h3>
+</div>
+<p></p>
+<h4>  Limit strength  </h4>
+<div>
+    <h3>  <a th:text="${material.getLimit_strength()}" > </a>  </h3>
+</div>
+<h4>  MPa  </h4>
+<p></p>
+<table>
+    <thead>
+    <tr>
+        <th> Thread </th>
+        <div th:each = "moment: ${moments}" >
+            <th>
+                <a th:text = "${moment.getThread().getThread()}" >   </a>
+            </th>
+        </div>
+
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <th> Moment Nm </th>
+        <div th:each = "moment: ${moments}" >
+            <th>
+                <a th:text = "${moment.getMoments_nm()}" >   </a>
+            </th>
+        </div>
+    </tr>
+       </tbody>
+</table>
+<p>
+
+<form th:action  = "@{/materials_update/{id}(id = ${material.getId()})}" method = "GET">
+    <button id="submit1" type="submit"> Edit</button>
+    <label for="submit1">the material</label>
+</form>
+<p>
+<form th:action  = "@{/materials_delete/{id}(id = ${material.getId()})}" method = "GET">
+    <button id="submit2" type="submit"> Delete</button>
+    <label for="submit2">the material</label>
+</form>
+
+</body>
+</html>

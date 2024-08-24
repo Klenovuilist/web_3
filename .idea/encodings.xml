@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/java/resources" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/main/java/web/Entity/Materals_db.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/main/java/web/Entity/Moments_db.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/main/java/web/Entity/Thread_db.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/main/java/web/config/AppInit.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/main/java/web/config/WebConfig.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/main/java/web/controller/ControllerMaterialCreate.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/main/java/web/controller/ControllerMaterialDelete.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/main/java/web/controller/ControllerMaterialsUpdate.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/main/java/web/controller/Controller_3.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/main/java/web/controller/Controller_Moment.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/main/java/web/dao/Materals_db_DAO.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/main/java/web/dao/Material_db_DAO_impl.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/main/java/web/dao/Moments_db_DAO.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/main/java/web/dao/Moments_db_DAO_impl.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/main/java/web/dao/Thread_db_DAO.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/main/java/web/dao/Thread_db_DAO_impl.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/webapp/WEB-INF/pages/OneMaterial.html" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/webapp/WEB-INF/pages/materials_create.html" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/webapp/WEB-INF/pages/materials_delete.html" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/webapp/WEB-INF/pages/moment_page_0.html" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/webapp/WEB-INF/pages/moment_page_1.html" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/webapp/WEB-INF/pages/update_material.html" charset="windows-1251" />
+  </component>
+</project>

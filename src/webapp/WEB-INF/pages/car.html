@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car</title>
+</head>
+<body>
+<div>
+    <table border="1">
+        <tr>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Price</th>
+        </tr>
+        <th:block th:each="msg : ${messages}">
+            <tr>
+            <td th:text = "${msg.getBrand()}"></td>
+            <td th:text = "${msg.getModel()}"></td>
+            <td th:text = "${msg.getPrice()}"></td>
+            </tr>
+        </th:block>
+    </table>
+</div>
+</body>
+</html>

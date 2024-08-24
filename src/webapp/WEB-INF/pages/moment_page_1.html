@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html" >
+
+
+<style>
+
+</style>
+<head>
+      <meta charset="UTF-8" lang="ru">
+    <title>Moment</title>
+    <link rel="stylesheet" href="classpath:/styles.css"/>
+</head>
+<body>
+<!-- action="/moment_page_1" -->
+<form method="get" action = "/moment_page_1">
+    <p>
+        <label for="thread">Thread:</label>
+        <select id="thread" name="threadId">
+
+            <div th:each = "thread: ${threads}" >
+
+                <option th:value= "${thread.getId}" > <a th:text = "${thread.getThread()}" > </a> </option>
+
+            </div>
+        </select>
+    </p>
+    <p>
+        <input type="submit" value="Apply" />
+    </p>
+</form>
+<h2>               </h2>
+<div>
+    <h3>  <a th:text="${thread}" > </a>   </h3>
+</div>
+<p>
+<p>
+<table>
+    <thead>
+    <tr>
+        <th> Material </th>
+       <div th:each = "material: ${materials}" >
+           <th>
+               <a th:href = " @{/moment_page_1/{id}(id = ${material.getId()})} " >
+                   <p th:text=" ${material.getMaterials()} "> </p> </a>
+           </th>
+       </div>
+    </tr>
+    </thead>
+    <tbody>
+     <tr>
+         <th> Moment Nm </th>
+         <div th:each = "moment: ${moments}" >
+             <th>
+                 <a th:text = "${moment.getMoments_nm()}" >   </a>
+             </th>
+         </div>
+     </tr>
+    <tr>
+         <th> Limit MPa </th>
+         <div th:each = "material: ${materials}" >
+             <th>
+                 <a th:text = "${material.getLimit_strength()}" >   </a>
+                 <p>
+             </th>
+         </div>
+
+     </tr>
+     <tr>
+         <th> Power N (theor) </th>
+         <div th:each = "power: ${powerByMomentTheor_N}" >
+             <th>
+                 <a th:text = "${power}" >   </a>
+             </th>
+         </div>
+
+     </tr>
+
+     <tr>
+         <th> Streght(theor) MPa </th>
+         <div th:each = "streght: ${stregthByPowerTheor_MPa}" >
+             <th>
+                 <a th:text = "${streght}" >   </a>
+             </th>
+         </div>
+
+     </tr>
+    </tbody>
+</table>
+</p>
+<form action = "/material_select" method = "get">
+    <button id="submit1" type="submit"> Select</button>
+    <label for="submit1">from the list</label>
+</form>
+</p>
+<form action = "/materials_create" method = "get">
+    <label for="submit2">New material</label>
+    <button id="submit2" type="submit"> Add +</button>
+</form>
+<!-- форма вычисления силы и момента-->
+<form method="get" action = "/moment_page_1">
+    <p></p>
+    <p></p>
+    <p></p>
+    <h3>  <a th:text="----------------------------" > </a>   </h3>
+
+    <label for="Strength">Strength Mpa </label>
+    <input id="Strength" type="text" th:name="limateStrength_Mpa" th:value="${dataForCalc[limateStrength_Mpa]}"  size="5" />
+
+    <p></p>
+    <label for="thread_mm">Thread_mm </label>
+    <input id="thread_mm" type="text" th:name="diametrThread_mm" th:value="${dataForCalc[diametrThread_mm]}"  size="3" />
+
+    <p></p>
+    <label for="middleDiamThread_mm">Middle Thread_mm </label>
+    <input id="middleDiamThread_mm" type="text" th:name="middleDiamThread_mm" th:value="${dataForCalc[middleDiamThread_mm]}"  size="4" />
+
+    <p></p>
+    <label for="k_threadDepth">k_threadDepth </label>
+    <input id="k_threadDepth" type="text" th:name="k_threadDepth" th:value="${dataForCalc[k_threadDepth]}"  size="2" />
+
+    <p></p>
+    <label for="safetyFactor">Safety factor </label>
+    <input id="safetyFactor" type="text" th:name="safetyFactor" th:value="${dataForCalc[safetyFactor]}"  size="4" />
+    <p></p>
+--------------------------------
+
+    <label for="stepThread_mm">Step thread_mm </label>
+    <input id="stepThread_mm" type="text" th:name="stepThread_mm" th:value="${dataForCalc[stepThread_mm]}"  size="3" />
+----------------
+    <p></p>
+    <label for="coefficientOfFrictionThread">coef.of Friction thread </label>
+    <input id="coefficientOfFrictionThread" type="text" th:name="coefficientOfFrictionThread" th:value="${dataForCalc[coefficientOfFrictionThread]}"  size="4" />
+
+    <p></p>
+    <label for="coefficientOfFrictionBoltHead">coef.of Friction bolt head </label>
+    <input id="coefficientOfFrictionBoltHead" type="text" th:name="coefficientOfFrictionBoltHead" th:value="${dataForCalc[coefficientOfFrictionBoltHead]}"  size="4" />
+
+    <p></p>
+    <label for="diametrHead_mm">D Head mm </label>
+    <input id="diametrHead_mm" type="text" th:name="diametrHead_mm" th:value="${dataForCalc[diametrHead_mm]}"  size="4" />
+
+    <p></p>
+    <label for="diametrHole_mm">D hole_mm </label>
+    <input id="diametrHole_mm" type="text" th:name="diametrHole_mm" th:value="${dataForCalc[diametrHole_mm]}"  size="4" />
+    <p></p>
+
+------------
+    <div>
+        <h3> Power Max N </h3>
+        <h3>  <a  th:text="${dataForCalc[powerMaxForMaterial_N]}" > </a> </h3>
+    </div>
+-------------
+    <div>
+        <h3> Moment_NM (Kellerman - Klyain) </h3>
+        <h3>  <a  th:text="${dataForCalc[momentKellerman_NM]}" > </a> </h3>
+    </div>
+    <p>
+        <input type="submit" value="Calc" />
+    </p>
+------------
+</form>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+dataForCalc.put("", "0");

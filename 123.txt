@@ -1,0 +1,14 @@
+/page_1?name=Jon&secondName=IV    1 
+ 
+/page_2?my=EV&life=go to...   2
+
+/people/new
+
+
+postgres
+123 PGadmin
+jdbc:postgresql://localhost:5432/Database226
+jdbc:postgresql://localhost:5432/postgres
+
+spring_boot_jon
+com.jon.spring_boot
