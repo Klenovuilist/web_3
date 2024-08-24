@@ -50,7 +50,7 @@ public class ControllerMaterialCreate {
             , @ModelAttribute Thread_db thread_db, HttpServletRequest request){
 
         System.out.println(materals_db.getMaterials());
-        System.out.println(materals_db.getLimitStrength13());
+        System.out.println(materals_db.getLimitStrength());
         System.out.println(request.getParameter("M3"));
 
 //        List<Moments_db> moments_dbs = new ArrayList<>();

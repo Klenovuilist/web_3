@@ -83,7 +83,7 @@ public class ControllerMaterialsUpdate {
         });
 
         materal_dbForUpdate.setMaterials(materals_db.getMaterials());
-        materal_dbForUpdate.setLimitStrength13(materals_db.getLimitStrength13());
+        materal_dbForUpdate.setLimitStrength(materals_db.getLimitStrength());
         materal_dbForUpdate.setMoments_db(moments_dbForUpdate);
 
         materals_db_dao.updateMaterial(materal_dbForUpdate);
