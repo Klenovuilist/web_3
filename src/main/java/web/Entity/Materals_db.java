@@ -27,6 +27,10 @@ public class Materals_db {
     @OneToMany(mappedBy = "materals_db", fetch = FetchType.LAZY)
     private List<Moments_db> moments_db;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private Users user;
+
 //    @OneToOne
 //    private Moments_db moments_db = new Moments_db();
 
